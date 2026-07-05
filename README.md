@@ -38,8 +38,11 @@ En `src/config/site.ts`, pegar la URL del evento en `calendlyUrl`
 (p. ej. `https://calendly.com/usuario/30min`). La sección Reserva embebe el
 calendario automáticamente; sin URL, ofrece agendar por WhatsApp.
 
-## Al publicar
+## Publicación
 
-1. Agregar en `index.html` las etiquetas `og:url` y `og:image`
-   (imagen 1200×630) con el dominio final.
-2. Grabar la URL publicada en la tarjeta NFC.
+- **En vivo:** https://landing-nfc-xi.vercel.app (Vercel, auto-deploy con cada
+  push a `main`).
+- **Al tener dominio propio:** 1) agregarlo en Vercel → Settings → Domains;
+  2) actualizar las 3 URLs marcadas en `index.html` (canonical, og:url,
+  og:image); 3) regrabar la tarjeta NFC. La imagen og (`public/og.png`) no
+  lleva URL, así que no hay que regenerarla.
