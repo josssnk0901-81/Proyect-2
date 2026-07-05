@@ -1,0 +1,78 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/space-grotesk";
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Tokens de diseño — única fuente de verdad para color, tipografía y sombras.
+   night = fondos oscuros · fog = grises de texto · snow = blanco · volt = azul
+--------------------------------------------------------------------------- */
+@theme {
+  --color-night-950: #04050a;
+  --color-night-900: #090b13;
+  --color-night-800: #0f121c;
+  --color-night-700: #171b28;
+  --color-night-600: #222738;
+
+  --color-fog-500: #778294; /* mínimo 4.5:1 sobre night-950 (WCAG AA) */
+  --color-fog-400: #8f98ab;
+  --color-fog-300: #bfc7d6;
+
+  --color-snow: #f4f6fb;
+
+  --color-volt-300: #93b4ff;
+  --color-volt-400: #5f8bff;
+  --color-volt-500: #2f66ff;
+  --color-volt-600: #1e4be0;
+
+  --font-display: "Space Grotesk Variable", "Inter Variable", system-ui, sans-serif;
+  --font-sans: "Inter Variable", system-ui, -apple-system, sans-serif;
+
+  --shadow-glow: 0 0 48px 0 --alpha(var(--color-volt-500) / 30%);
+}
+
+@layer base {
+  /* Sin scroll-behavior:smooth — Lenis se encarga del desplazamiento */
+  body {
+    @apply bg-night-950 font-sans text-snow antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-volt-500);
+    color: var(--color-snow);
+  }
+
+  /* Respeto a usuarios que desactivan animaciones */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Marquee de tecnologías: el track lleva el contenido duplicado,
+   así que -50% equivale a un ciclo completo sin salto visible */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Entrada suave al cambiar de testimonio */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* Panel de vidrio — glassmorphism sutil, usar con moderación */
+@utility glass {
+  background: --alpha(var(--color-snow) / 4%);
+  border: 1px solid --alpha(var(--color-snow) / 8%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
