@@ -12,24 +12,18 @@ export const LANGUAGES: { code: Lang; label: string }[] = [
 
 /** Idioma de respaldo si el del dispositivo no es ninguno de los soportados. */
 export const FALLBACK: Lang = 'en'
-export const STORAGE_KEY = 'lang'
 export const isLang = (v: string): v is Lang =>
   v === 'es' || v === 'en' || v === 'ja'
 
 /**
- * Idioma inicial:
- * 1. Elección previa guardada por el visitante.
- * 2. Idioma del dispositivo (navigator.languages).
- * 3. Respaldo (inglés).
+ * Idioma inicial, SIN persistencia por decisión de diseño: cada visita
+ * autodetecta el idioma del dispositivo. Un cambio manual solo dura la
+ * sesión; al volver a abrir la página, se vuelve a detectar.
+ * 1. Idioma del dispositivo (navigator.languages).
+ * 2. Respaldo (inglés).
  * Es una SPA sin SSR, así que `navigator` existe en el primer render.
  */
 export function detectLang(): Lang {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved && isLang(saved)) return saved
-  } catch {
-    // localStorage puede estar bloqueado (modo privado); seguimos con detección
-  }
   const candidates = navigator.languages?.length
     ? navigator.languages
     : [navigator.language]

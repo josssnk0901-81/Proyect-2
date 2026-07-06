@@ -25,8 +25,8 @@ const es = {
 
   hero: {
     badge: 'Disponible para nuevos proyectos',
-    titleBefore: 'Ingeniería digital con ',
-    titleHighlight: 'sello propio',
+    titleBefore: 'Tecnología sólida con la ',
+    titleHighlight: 'identidad de tu negocio',
     titleAfter: '',
     subtitle:
       'Desarrollo web, automatización y experiencias interactivas a la medida — rápidas, modernas y cuidadas hasta el último detalle.',
@@ -224,9 +224,9 @@ const es = {
   },
 
   meta: {
-    title: 'José Gutiérrez — Ingeniería digital con sello propio',
+    title: 'José Gutiérrez — Tecnología sólida con la identidad de tu negocio',
     description:
-      'Desarrollo web, automatización y experiencias interactivas a la medida. Ingeniería digital con sello propio.',
+      'Desarrollo web, automatización y experiencias interactivas a la medida. Tecnología sólida con la identidad de tu negocio.',
   },
 
   // Textos que se auto-escriben en WhatsApp/correo. En es van solo en español;
@@ -258,8 +258,8 @@ const en: Translation = {
 
   hero: {
     badge: 'Available for new projects',
-    titleBefore: 'Digital engineering with a ',
-    titleHighlight: 'signature of its own',
+    titleBefore: 'Solid engineering with ',
+    titleHighlight: 'your business’s own identity',
     titleAfter: '',
     subtitle:
       'Custom web development, automation and interactive experiences — fast, modern and crafted down to the last detail.',
@@ -457,9 +457,9 @@ const en: Translation = {
   },
 
   meta: {
-    title: 'José Gutiérrez — Digital engineering with a signature of its own',
+    title: 'José Gutiérrez — Solid engineering with your business’s own identity',
     description:
-      'Custom web development, automation and interactive experiences. Digital engineering with a signature of its own.',
+      'Custom web development, automation and interactive experiences. Solid engineering with your business’s own identity.',
   },
 
   messages: {
@@ -487,11 +487,11 @@ const ja: Translation = {
 
   hero: {
     badge: '新規プロジェクト受付中',
-    titleBefore: '確かな技術に、',
-    titleHighlight: '自分らしさ',
+    titleBefore: '確かな技術で、ビジネスに',
+    titleHighlight: 'あなたらしさ',
     titleAfter: 'を。',
     subtitle:
-      'Web制作、業務の自動化、そしてインタラクティブな体験を、オーダーメイドで。速く、モダンに、細部までこだわって仕上げます。',
+      'Web制作、業務効率化、そしてインタラクティブな体験をオーダーメイドで。圧倒的なスピード、モダンな設計、そして細部へのこだわりを形にします。',
     ctaReserve: 'ミーティングを予約',
     ctaPortfolio: '実績を見る',
   },
@@ -499,20 +499,20 @@ const ja: Translation = {
   about: {
     kicker: '私について',
     title: 'はじめまして、ホセです。',
-    p1: '私はインターネット上のものづくりを仕事にしています。上質さを感じるサイト、繰り返し作業の時間を減らす自動化、そして記憶に残るインタラクティブな体験。誰も気づかないような細部まで磨き込むタイプです。その細部こそが、「ただ動くもの」と「心地よいもの」を分けるからです。',
+    p1: '私は、Webを舞台にした「ものづくり」を本業にしています。上質さを感じるデザイン、面倒な繰り返し作業をなくす自動化、そして心に残るインタラクティブな体験。私は、誰も気づかないような細部まで徹底的に磨き込むタイプです。なぜなら、その細部こそが「ただ動くシステム」と「心地よい体験」を分ける境界線だからです。',
     p2: '最初のお打ち合わせから納品まで、私が直接担当します。仲介者なし、不要な専門用語なし、大げさな約束もなし。あなたのビジネスに必要なことをお聞かせください。私なら何をするかを正直にお伝えし、一緒に形にしていきます。',
     principles: [
       {
         title: '直接のやり取り',
-        text: '最初から最後まで、コードを書く本人と話せます。意思決定は速く、途中で何かが失われることもありません。',
+        text: '最初から最後まで、実際にコードを書くエンジニア（私）と直接対話ができます。意思決定がスピーディーで、伝言ゲームによる誤解も生まれません。',
       },
       {
-        title: 'オーダーメイド',
-        text: 'どのプロジェクトも白紙から始めます。テンプレートは見ればわかるもの。そしてあなたのビジネスは、ほかのどれとも違います。',
+        title: 'オーダーメイド開発',
+        text: 'すべてのプロジェクトを「白紙」からスタートします。既製のテンプレートは一切使いません。あなたのビジネスは、他のどこにもないユニークなものだからです。',
       },
       {
-        title: '何よりも透明性',
-        text: 'スケジュール、費用、進捗を初日からオープンに。ご自身のプロジェクトが今どの段階にあるか、いつでも把握できます。',
+        title: '圧倒的な透明性',
+        text: 'スケジュール、費用、開発状況を初日からすべてオープンにします。あなたのプロジェクトが今どの段階にあるのか、いつでもリアルタイムに把握できます。',
       },
     ],
   },
@@ -523,20 +523,20 @@ const ja: Translation = {
     lead: 'プロジェクトはそれぞれ違いますが、私が手がけるものの多くは、この4つの領域のいずれかに収まります。',
     items: [
       {
-        title: 'Webサイト・ランディングページ',
-        text: '速く、モダンで、成果につながるページ。このようなランディングページから、ビジネス全体のサイトまで対応します。',
+        title: 'Webサイト・ランディングページ（LP）',
+        text: '高速でモダン、そして確実な成果（コンバージョン）につながるページ。シンプルなLPから、ビジネスの核となるコーポレートサイトまで対応します。',
       },
       {
-        title: '業務の自動化',
-        text: 'WhatsApp、メール、スプレッドシート、CRM。お使いのツールをつなぎ、繰り返しの作業をミスなく、24時間いつでも自動で処理します。',
+        title: '業務の自動化（DX・ワークフロー）',
+        text: 'WhatsApp、メール、スプレッドシート、CRM。現在お使いのツールを連携させ、繰り返しのルーティンワークを24時間ミスなく自動化します。',
       },
       {
         title: 'インタラクティブな体験',
-        text: 'ブラウザ上の3D、アニメーション、細やかな演出。通りすがりの訪問を、記憶に残るブランドへと変えます。',
+        text: 'ブラウザ上の3D表現、滑らかなアニメーション、細やかな演出。ユーザーの「ただの訪問」を、記憶に残る「ブランド体験」へと変貌させます。',
       },
       {
-        title: '社内ツール',
-        text: 'ダッシュボード、管理システム、カタログ。あなたの課題をぴったり解決する、小さくてよくできたソフトウェアです。',
+        title: '社内専用ツール・管理システム',
+        text: 'ダッシュボード、管理画面、社内カタログなど。あなたのビジネスが抱える課題をピンポイントで解決する、無駄のない洗練されたソフトウェアを開発します。',
       },
     ],
   },
@@ -686,9 +686,9 @@ const ja: Translation = {
   },
 
   meta: {
-    title: 'José Gutiérrez — 確かな技術に、自分らしさを',
+    title: 'José Gutiérrez — 確かな技術で、ビジネスにあなたらしさを',
     description:
-      'オーダーメイドのWeb制作、業務の自動化、インタラクティブな体験。確かな技術に、自分らしさを。',
+      'オーダーメイドのWeb制作、業務効率化、インタラクティブな体験。確かな技術で、ビジネスにあなたらしさを。',
   },
 
   messages: {
