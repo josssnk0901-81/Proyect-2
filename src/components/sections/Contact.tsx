@@ -4,8 +4,10 @@ import { site } from '@/config/site'
 import { emailHref, externalProps } from '@/lib/links'
 import { Container } from '@/components/ui/Container'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { useI18n } from '@/i18n'
 
 export function Contact() {
+  const { t } = useI18n()
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
 
@@ -14,26 +16,27 @@ export function Contact() {
       label: 'WhatsApp',
       value: site.contact.whatsapp,
       href: site.contact.whatsappUrl,
-      hint: 'La vía más rápida',
+      hint: t.contact.whatsappHint,
     },
     {
-      label: 'Correo',
+      label: t.contact.emailLabel,
       value: site.contact.email,
-      href: emailHref('Hola José, quiero platicarte mi proyecto'),
-      hint: 'Para propuestas y documentos',
+      href: emailHref(t.messages.contactEmailSubject),
+      hint: t.contact.emailHint,
     },
     {
       label: 'Instagram',
       value: site.contact.instagramHandle,
       href: site.contact.instagramUrl,
-      hint: 'Proyectos y detrás de cámaras',
+      hint: t.contact.instagramHint,
     },
   ]
 
   /** El formulario abre WhatsApp con el mensaje listo — sin backend ni spam. */
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const text = `Hola José, soy ${name.trim()}. ${message.trim()}`
+    const greeting = t.messages.contactGreeting.replace('{name}', name.trim())
+    const text = `${greeting} ${message.trim()}`
     window.open(
       `${site.contact.whatsappUrl}?text=${encodeURIComponent(text)}`,
       '_blank',
@@ -48,9 +51,9 @@ export function Contact() {
     <section id="contacto" className="scroll-mt-28 py-20 sm:py-24">
       <Container>
         <SectionHeader
-          kicker="Contacto"
-          title="Hablemos de tu proyecto"
-          lead="Elige el canal que prefieras — todos llegan directo a mí, no a un buzón que nadie revisa."
+          kicker={t.contact.kicker}
+          title={t.contact.title}
+          lead={t.contact.lead}
         />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
@@ -89,24 +92,24 @@ export function Contact() {
           <form data-reveal onSubmit={handleSubmit} className="glass rounded-3xl p-6 sm:p-8">
             <div className="flex flex-col gap-4">
               <label className="flex flex-col gap-2 text-sm text-fog-300">
-                Tu nombre
+                {t.contact.nameLabel}
                 <input
                   type="text"
                   required
                   value={name}
                   onChange={(event) => setName(event.target.value)}
-                  placeholder="¿Cómo te llamas?"
+                  placeholder={t.contact.namePlaceholder}
                   className={inputStyles}
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm text-fog-300">
-                Tu mensaje
+                {t.contact.messageLabel}
                 <textarea
                   required
                   rows={5}
                   value={message}
                   onChange={(event) => setMessage(event.target.value)}
-                  placeholder="Cuéntame qué necesitas — una página, una automatización, una idea…"
+                  placeholder={t.contact.messagePlaceholder}
                   className={`${inputStyles} resize-none`}
                 />
               </label>
@@ -114,12 +117,9 @@ export function Contact() {
                 type="submit"
                 className="rounded-xl bg-volt-600 px-6 py-3.5 text-sm font-medium text-snow transition-colors duration-200 hover:bg-volt-500"
               >
-                Enviar por WhatsApp
+                {t.contact.submit}
               </button>
-              <p className="text-center text-xs text-fog-500">
-                Se abre WhatsApp con tu mensaje listo para enviar — sin
-                registros ni correos de spam.
-              </p>
+              <p className="text-center text-xs text-fog-500">{t.contact.formNote}</p>
             </div>
           </form>
         </div>

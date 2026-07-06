@@ -1,34 +1,16 @@
 import { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { useI18n } from '@/i18n'
 
 /**
  * NOTA: testimonios de ejemplo, coherentes con los proyectos del portafolio.
- * Reemplazar por reseñas reales conforme lleguen. Carrusel manual —
- * sin autoplay agresivo, como pide el brief.
+ * Reemplazar por reseñas reales conforme lleguen (en src/i18n/translations.ts).
+ * Carrusel manual — sin autoplay agresivo, como pide el brief.
  */
-const testimonials = [
-  {
-    quote:
-      'Dejé de contestar las mismas preguntas con cada huésped. Ahora acercan el teléfono a la tarjeta y tienen todo: el wifi, cómo funciona la casa, qué visitar. Se ve carísimo y lo armó en unos días.',
-    name: 'Mónica Sanz',
-    role: 'Anfitriona · Cabaña Serendipia, Chiapas',
-  },
-  {
-    quote:
-      'Lo que más me gustó es que trato directo con él, sin vueltas. Me explicó qué convenía y qué no, cumplió los tiempos que dijo, y el resultado se siente de otro nivel.',
-    name: 'Constructora Santa Elena',
-    role: 'Automatización de cotizaciones y facturas',
-  },
-  {
-    quote:
-      'Quería una página que no pareciera plantilla y eso fue justo lo que entregó: moderna, rapidísima en el celular y con las citas conectadas a WhatsApp. Mis pacientes llegan diciendo que se ve muy profesional.',
-    name: 'Dra. Paola Rivas',
-    role: 'Clínica dental · Sitio web y citas',
-  },
-]
-
 export function Testimonials() {
+  const { t } = useI18n()
+  const testimonials = t.testimonials.items
   const [active, setActive] = useState(0)
   const current = testimonials[active]
 
@@ -36,8 +18,8 @@ export function Testimonials() {
     <section id="testimonios" className="scroll-mt-28 py-20 sm:py-24">
       <Container>
         <SectionHeader
-          kicker="Testimonios"
-          title="Lo que dicen quienes ya trabajaron conmigo"
+          kicker={t.testimonials.kicker}
+          title={t.testimonials.title}
         />
 
         <div data-reveal className="mt-10">
@@ -73,7 +55,7 @@ export function Testimonials() {
                 key={item.name}
                 type="button"
                 onClick={() => setActive(index)}
-                aria-label={`Ver testimonio ${index + 1}`}
+                aria-label={`${t.testimonials.viewLabel} ${index + 1}`}
                 aria-current={index === active}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === active

@@ -4,34 +4,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { createReveal } from '@/lib/reveal'
 import { Container } from '@/components/ui/Container'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { useI18n } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const steps = [
-  {
-    title: 'Contacto',
-    text: 'Me escribes por WhatsApp o agendas una llamada. Me cuentas tu idea y te digo, sin rodeos, si puedo ayudarte y cómo.',
-  },
-  {
-    title: 'Planeación',
-    text: 'Definimos juntos alcance, tiempos y precio. Todo por escrito desde el inicio, para que no haya sorpresas después.',
-  },
-  {
-    title: 'Desarrollo',
-    text: 'Construyo tu proyecto mostrándote avances reales que puedes abrir en tu teléfono — no maquetas — y ajustamos sobre la marcha.',
-  },
-  {
-    title: 'Entrega',
-    text: 'Publicamos juntos, probamos en dispositivos reales y te explico cómo usar y administrar lo que ahora es tuyo.',
-  },
-  {
-    title: 'Soporte',
-    text: 'No desaparezco al entregar: sigo al pendiente para dudas, ajustes y mejoras cuando las necesites.',
-  },
-]
-
 export function Process() {
   const scope = useRef<HTMLElement>(null)
+  const { t } = useI18n()
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -64,9 +43,9 @@ export function Process() {
     <section id="proceso" ref={scope} className="scroll-mt-28 py-20 sm:py-24">
       <Container>
         <SectionHeader
-          kicker="Proceso"
-          title="De la idea a la entrega"
-          lead="Sin misterio: así es trabajar conmigo, del primer mensaje al soporte después del lanzamiento."
+          kicker={t.process.kicker}
+          title={t.process.title}
+          lead={t.process.lead}
         />
         <div data-process-list className="relative mt-12">
           {/* Riel de fondo y línea de progreso */}
@@ -76,14 +55,14 @@ export function Process() {
             className="absolute top-2 bottom-2 left-[5px] w-0.5 bg-volt-500"
           />
           <ol className="flex flex-col gap-10 pl-7">
-            {steps.map((step, index) => (
+            {t.process.steps.map((step, index) => (
               <li key={step.title} data-process-step className="relative">
                 <span
                   aria-hidden
                   className="absolute top-1 -left-7 size-3 rounded-full border-2 border-volt-500 bg-night-950"
                 />
                 <p className="text-xs font-medium tracking-[0.2em] text-volt-400 uppercase">
-                  Paso {index + 1}
+                  {t.process.stepLabel} {index + 1}
                 </p>
                 <h3 className="mt-1 font-display text-xl font-semibold">
                   {step.title}

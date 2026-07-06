@@ -1,6 +1,7 @@
 import { site } from '@/config/site'
 import { emailHref, externalProps } from '@/lib/links'
 import { Container } from '@/components/ui/Container'
+import { useI18n } from '@/i18n'
 
 /**
  * CTA principal del sitio. Con `site.calendlyUrl` se embebe el calendario
@@ -8,8 +9,10 @@ import { Container } from '@/components/ui/Container'
  * por WhatsApp.
  */
 export function Booking() {
+  const { t } = useI18n()
+
   const whatsappBooking = `${site.contact.whatsappUrl}?text=${encodeURIComponent(
-    'Hola José, me gustaría agendar una reunión para platicarte mi proyecto.',
+    t.messages.bookingWhatsapp,
   )}`
 
   // Parámetros de embed de Calendly: colores del sitio (hex sin #)
@@ -31,32 +34,31 @@ export function Booking() {
           />
 
           <p className="text-xs font-medium tracking-[0.25em] text-volt-400 uppercase">
-            Reserva
+            {t.booking.kicker}
           </p>
           <h2 className="mx-auto mt-3 max-w-xl font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            ¿Listo para empezar tu proyecto?
+            {t.booking.title}
           </h2>
           <p className="mx-auto mt-4 max-w-md leading-relaxed text-fog-400">
-            Agenda una llamada sin compromiso. Me cuentas tu idea, te digo qué
-            haría yo y te doy un presupuesto claro.
+            {t.booking.lead}
           </p>
 
           {site.calendlyUrl ? (
             <>
               <iframe
                 src={calendlyEmbed}
-                title="Agenda una reunión — Calendly"
+                title={t.booking.iframeTitle}
                 loading="lazy"
                 className="mt-8 h-[700px] w-full rounded-2xl border-0 bg-night-800"
               />
               <p className="mt-4 text-xs text-fog-500">
-                ¿Prefieres WhatsApp?{' '}
+                {t.booking.preferWhatsapp}
                 <a
                   href={whatsappBooking}
                   {...externalProps(whatsappBooking)}
                   className="text-volt-300 transition-colors duration-200 hover:text-volt-400"
                 >
-                  Escríbeme directo
+                  {t.booking.writeDirect}
                 </a>
                 .
               </p>
@@ -69,19 +71,17 @@ export function Booking() {
                   {...externalProps(whatsappBooking)}
                   className="rounded-xl bg-volt-600 px-7 py-3.5 text-sm font-medium text-snow shadow-glow transition-colors duration-200 hover:bg-volt-500"
                 >
-                  Agendar por WhatsApp
+                  {t.booking.whatsappCta}
                 </a>
                 <a
-                  href={emailHref('Quiero agendar una reunión')}
-                  {...externalProps(emailHref('Quiero agendar una reunión'))}
+                  href={emailHref(t.messages.bookingEmailSubject)}
+                  {...externalProps(emailHref(t.messages.bookingEmailSubject))}
                   className="glass rounded-xl px-7 py-3.5 text-sm font-medium text-fog-300 transition-colors duration-200 hover:text-snow"
                 >
-                  O escríbeme un correo
+                  {t.booking.emailCta}
                 </a>
               </div>
-              <p className="mt-5 text-xs text-fog-500">
-                Normalmente respondo el mismo día.
-              </p>
+              <p className="mt-5 text-xs text-fog-500">{t.booking.sameDayNote}</p>
             </>
           )}
         </div>

@@ -1,5 +1,6 @@
 import { Container } from '@/components/ui/Container'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { useI18n } from '@/i18n'
 
 const rowA = ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Three.js', 'GSAP', 'Motion', 'Vite']
 const rowB = ['Node.js', 'n8n', 'Airtable', 'Docker', 'Git', 'Linux', 'APIs y webhooks']
@@ -42,13 +43,15 @@ function MarqueeRow({ items, reverse = false }: { items: string[]; reverse?: boo
 }
 
 export function TechStack() {
+  const { t } = useI18n()
+
   return (
     <section id="tecnologias" className="scroll-mt-28 py-20 sm:py-24">
       <Container>
         <SectionHeader
-          kicker="Tecnologías"
-          title="Con lo que trabajo"
-          lead="Las mismas herramientas detrás de los productos que usas todos los días — elegidas por rendimiento, no por moda."
+          kicker={t.tech.kicker}
+          title={t.tech.title}
+          lead={t.tech.lead}
         />
       </Container>
       <div data-reveal className="mt-10 flex flex-col gap-4">

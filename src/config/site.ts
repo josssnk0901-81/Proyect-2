@@ -29,11 +29,3 @@ export type SectionId =
   | 'testimonios'
   | 'reserva'
   | 'contacto'
-
-export const navLinks: { id: SectionId; label: string }[] = [
-  { id: 'sobre-mi', label: 'Sobre mí' },
-  { id: 'servicios', label: 'Servicios' },
-  { id: 'portafolio', label: 'Portafolio' },
-  { id: 'proceso', label: 'Proceso' },
-  { id: 'contacto', label: 'Contacto' },
-]

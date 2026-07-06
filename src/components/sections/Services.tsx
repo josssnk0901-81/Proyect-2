@@ -2,25 +2,7 @@ import { useRef } from 'react'
 import type { MouseEvent } from 'react'
 import { Container } from '@/components/ui/Container'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-
-const services = [
-  {
-    title: 'Sitios web y landings',
-    text: 'Páginas rápidas, modernas y pensadas para convertir — desde una landing como esta hasta el sitio completo de tu negocio.',
-  },
-  {
-    title: 'Automatización de procesos',
-    text: 'Conecto tus herramientas — WhatsApp, correo, hojas de cálculo, CRM — para que el trabajo repetitivo se haga solo, sin errores y a cualquier hora.',
-  },
-  {
-    title: 'Experiencias interactivas',
-    text: '3D en el navegador, animación y microdetalles que convierten una visita de paso en una marca que se recuerda.',
-  },
-  {
-    title: 'Herramientas internas',
-    text: 'Dashboards, sistemas de registro y catálogos: software pequeño y bien hecho que resuelve exactamente el problema que tienes.',
-  },
-]
+import { useI18n } from '@/i18n'
 
 /** Tarjeta glass con luz que sigue al cursor (solo se nota en desktop). */
 function ServiceCard({
@@ -69,16 +51,18 @@ function ServiceCard({
 }
 
 export function Services() {
+  const { t } = useI18n()
+
   return (
     <section id="servicios" className="scroll-mt-28 py-20 sm:py-24">
       <Container>
         <SectionHeader
-          kicker="Servicios"
-          title="Lo que puedo construir para ti"
-          lead="Cada proyecto es distinto, pero casi todo lo que construyo cae en una de estas cuatro áreas."
+          kicker={t.services.kicker}
+          title={t.services.title}
+          lead={t.services.lead}
         />
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
-          {services.map((service, index) => (
+          {t.services.items.map((service, index) => (
             <ServiceCard key={service.title} index={index} {...service} />
           ))}
         </ul>

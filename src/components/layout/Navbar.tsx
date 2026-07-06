@@ -2,10 +2,21 @@ import { useEffect, useState } from 'react'
 // LazyMotion + m en vez de motion: solo carga las funciones de animación
 // DOM que el menú necesita — recorta varios kB del bundle inicial
 import { AnimatePresence, LazyMotion, domAnimation, m } from 'motion/react'
-import { navLinks, site } from '@/config/site'
+import { site } from '@/config/site'
+import { useI18n } from '@/i18n'
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const { t } = useI18n()
+
+  const links = [
+    { id: 'sobre-mi', label: t.nav.about },
+    { id: 'servicios', label: t.nav.services },
+    { id: 'portafolio', label: t.nav.portfolio },
+    { id: 'proceso', label: t.nav.process },
+    { id: 'contacto', label: t.nav.contact },
+  ]
 
   // Con el menú abierto: bloquea el scroll del fondo y marca el contenido
   // como inert (el foco del teclado y los lectores se quedan en el menú)
@@ -46,7 +57,7 @@ export function Navbar() {
         </a>
 
         <ul className="hidden items-center gap-7 text-sm text-fog-300 lg:flex">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <li key={link.id}>
               <a
                 href={`#${link.id}`}
@@ -58,14 +69,15 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageSwitcher />
           {/* En pantallas mínimas el CTA vive dentro del menú móvil */}
           <a
             href="#reserva"
             onClick={() => setOpen(false)}
             className="hidden rounded-xl bg-volt-600 px-4 py-2 text-sm font-medium text-snow transition-colors duration-200 hover:bg-volt-500 min-[400px]:inline-flex"
           >
-            Reservar
+            {t.nav.reserve}
           </a>
           <button
             type="button"
@@ -107,7 +119,7 @@ export function Navbar() {
                 transition={{ duration: 0.25, ease: 'easeOut' }}
                 className="flex h-full flex-col justify-center gap-6 px-8"
               >
-              {navLinks.map((link) => (
+              {links.map((link) => (
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
@@ -124,7 +136,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="inline-flex rounded-xl bg-volt-600 px-6 py-3 font-medium text-snow transition-colors duration-200 hover:bg-volt-500"
                 >
-                  Reservar una reunión
+                  {t.nav.reserveFull}
                 </a>
               </li>
               </m.ul>
