@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { createReveal } from '@/lib/reveal'
 import { Container } from '@/components/ui/Container'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
@@ -49,20 +50,11 @@ export function Process() {
         },
       })
 
-      // Cada paso aparece al llegar a su posición
-      gsap.utils.toArray<HTMLElement>('[data-process-step]').forEach((step) => {
-        gsap.from(step, {
-          y: 24,
-          opacity: 0,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: step,
-            start: 'top 85%',
-            toggleActions: 'restart reverse restart reverse',
-          },
-        })
-      })
+      // Cada paso aparece al entrar y vuelve a animar al reaparecer (mismo
+      // comportamiento que el reveal general, sin quedar oculto a la vista)
+      gsap.utils
+        .toArray<HTMLElement>('[data-process-step]')
+        .forEach((step) => createReveal(step, { y: 24, duration: 0.7 }))
     }, scope)
 
     return () => ctx.revert()

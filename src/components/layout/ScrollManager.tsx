@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
+import { createReveal } from '@/lib/reveal'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -11,8 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
  *   (la integración recomendada por ambas librerías).
  * - Reveal genérico: todo elemento con [data-reveal] entra con
  *   fade + desplazamiento cada vez que aparece en el viewport, en
- *   ambas direcciones — al salir de pantalla se oculta y queda listo
- *   para volver a animar, bajando o subiendo.
+ *   ambas direcciones (ver createReveal).
  * Si el usuario prefiere movimiento reducido, no se activa nada.
  */
 export function ScrollManager() {
@@ -31,21 +31,9 @@ export function ScrollManager() {
     gsap.ticker.lagSmoothing(0)
 
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((element) => {
-        gsap.from(element, {
-          y: 28,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: element,
-            start: 'top 85%',
-            // entrar (↓) · salir por arriba · entrar de vuelta (↑) · salir por abajo
-            // restart/reverse en las cuatro → el ciclo se repite en ambas direcciones
-            toggleActions: 'restart reverse restart reverse',
-          },
-        })
-      })
+      gsap.utils
+        .toArray<HTMLElement>('[data-reveal]')
+        .forEach((element) => createReveal(element))
     })
 
     return () => {
