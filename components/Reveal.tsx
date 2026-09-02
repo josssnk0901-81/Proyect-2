@@ -3,7 +3,7 @@
 import {motion, useReducedMotion} from "framer-motion";
 import type {ReactNode} from "react";
 
-/** Reveal fade-up al entrar en viewport. Solo transform/opacity; respeta reduced-motion. */
+/** Reveal fade-up cada vez que entra en viewport (bucle al subir/bajar). Solo transform/opacity; respeta reduced-motion. */
 export default function Reveal({
   children,
   delay = 0,
@@ -19,7 +19,7 @@ export default function Reveal({
       className={className}
       initial={reduce ? false : {opacity: 0, y: 18}}
       whileInView={{opacity: 1, y: 0}}
-      viewport={{once: true, margin: "0px 0px -8% 0px"}}
+      viewport={{once: false, margin: "0px 0px -8% 0px"}}
       transition={{duration: 0.6, delay, ease: [0.2, 0.7, 0.2, 1]}}
     >
       {children}
