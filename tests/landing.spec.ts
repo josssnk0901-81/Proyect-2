@@ -22,8 +22,8 @@ function collectPageProblems(page: Page) {
 }
 
 const LOCALES = [
-  {code: "es", headline: "Sistemas que se ven tan bien como funcionan."},
-  {code: "ja", headline: "美しく、そして動くシステムを。"},
+  {code: "es", headline: "De una idea a un sistema serio."},
+  {code: "ja", headline: "アイデアから、本物のシステムへ。"},
   {code: "en", headline: null}, // solo verificamos que carga y cambia
 ] as const;
 
