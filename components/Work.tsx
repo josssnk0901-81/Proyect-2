@@ -17,13 +17,6 @@ const CONFIG = [
     ],
   },
   {
-    key: "julio",
-    tag: "Web · Cliente",
-    cover: "/work/julio-jimenez.png",
-    liveUrl: "https://website-photography-2.vercel.app/",
-    shots: [{src: "/work/julio-jimenez.png", cap: "sitio"}],
-  },
-  {
     key: "constructora",
     tag: "Automatización · n8n",
     cover: "/work/constructora.png",
@@ -56,7 +49,7 @@ export default async function Work() {
     title: t(`${c.key}.title`),
     desc: t(`${c.key}.desc`),
     cover: c.cover,
-    liveUrl: "liveUrl" in c ? c.liveUrl : undefined,
+    liveUrl: "liveUrl" in c ? (c as {liveUrl?: string}).liveUrl : undefined,
     shots: c.shots.map((s) => ({src: s.src, cap: t(`shots.${s.cap}`)})),
   }));
 
