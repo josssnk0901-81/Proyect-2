@@ -48,10 +48,36 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const {locale} = await props.params;
   const t = await getTranslations({locale, namespace: "Meta"});
+  const title = t("title");
+  const description = t("description");
+  const ogLocale = locale === "ja" ? "ja_JP" : locale === "en" ? "en_US" : "es_ES";
   return {
-    title: t("title"),
-    description: t("description"),
+    metadataBase: new URL("https://www.jossnkmogu81.dev"),
+    title,
+    description,
     alternates: {languages: {es: "/es", ja: "/ja", en: "/en"}},
+    openGraph: {
+      type: "website",
+      siteName: "JossSnK 無月",
+      url: `/${locale}`,
+      locale: ogLocale,
+      title,
+      description,
+      images: [
+        {
+          url: "/og.jpg",
+          width: 1200,
+          height: 630,
+          alt: "JossSnK 無月 — De una idea a un sistema serio.",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og.jpg"],
+    },
   };
 }
 
