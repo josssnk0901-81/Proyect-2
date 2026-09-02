@@ -62,6 +62,8 @@ export default function WorkGrid({cases, labels}: {cases: WorkCase[]; labels: Wo
 
   const shots = active === null ? [] : cases[active].shots;
   const close = useCallback(() => setActive(null), []);
+  // Freno al guardado de imágenes (clic derecho / arrastrar). No aplica al PDF.
+  const blockSave = (e: {preventDefault: () => void}) => e.preventDefault();
 
   const reduced = () =>
     typeof window !== "undefined" &&
@@ -121,8 +123,9 @@ export default function WorkGrid({cases, labels}: {cases: WorkCase[]; labels: Wo
               src={c.cover}
               alt={c.title}
               fill
+              draggable={false}
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.03] select-none"
             />
           ) : (
             <BrandedCover />
@@ -134,8 +137,9 @@ export default function WorkGrid({cases, labels}: {cases: WorkCase[]; labels: Wo
                   <button
                     type="button"
                     onClick={() => open(i)}
+                    onContextMenu={blockSave}
                     aria-label={`${labels.viewShots} — ${c.title}`}
-                    className="relative block aspect-[16/10] overflow-hidden bg-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+                    className="no-save relative block aspect-[16/10] overflow-hidden bg-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
                   >
                     {cover}
                     {c.shots.length > 1 && (
@@ -145,7 +149,12 @@ export default function WorkGrid({cases, labels}: {cases: WorkCase[]; labels: Wo
                     )}
                   </button>
                 ) : (
-                  <div className="relative aspect-[16/10] overflow-hidden bg-bg">{cover}</div>
+                  <div
+                    onContextMenu={blockSave}
+                    className="no-save relative aspect-[16/10] overflow-hidden bg-bg"
+                  >
+                    {cover}
+                  </div>
                 )}
 
                 <div className="flex flex-1 flex-col p-6">
@@ -213,7 +222,8 @@ export default function WorkGrid({cases, labels}: {cases: WorkCase[]; labels: Wo
                 <div
                   ref={scrollerRef}
                   onScroll={onScroll}
-                  className="no-scrollbar flex h-[68vh] w-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-xl"
+                  onContextMenu={blockSave}
+                  className="no-save no-scrollbar flex h-[68vh] w-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-xl"
                 >
                   {shots.map((s) => (
                     <div
@@ -224,6 +234,7 @@ export default function WorkGrid({cases, labels}: {cases: WorkCase[]; labels: Wo
                         src={s.src}
                         alt={s.cap}
                         fill
+                        draggable={false}
                         sizes="(max-width: 1100px) 92vw, 1100px"
                         className="object-contain"
                       />

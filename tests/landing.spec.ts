@@ -109,6 +109,17 @@ test.describe("Landing JossSnK 無月", () => {
     await expect(dialog).toBeHidden();
   });
 
+  test("las imágenes de trabajo no se arrastran; solo el CV se descarga", async ({page}) => {
+    await page.goto("/es");
+    // Portadas de trabajo: draggable=false (freno al guardado casual).
+    await expect(page.locator("#trabajo img").first()).toHaveAttribute("draggable", "false");
+    // El CV en PDF sí conserva la descarga.
+    await page.locator("#contacto").scrollIntoViewIfNeeded();
+    const cv = page.getByRole("link", {name: "Descargar CV"});
+    expect(await cv.getAttribute("download")).not.toBeNull();
+    await expect(cv).toHaveAttribute("href", "/cv-jossnk.pdf");
+  });
+
   test("/api/wa redirige a wa.me sin exponer el número en el cliente", async ({page}) => {
     const res = await page.request.get("/api/wa", {maxRedirects: 0});
     expect([302, 307, 308]).toContain(res.status());
