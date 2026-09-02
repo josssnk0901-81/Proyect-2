@@ -40,7 +40,7 @@
     "constructora": { "title": "Construction sales system", "desc": "Quote → follow-up → close → invoicing, with a live panel. n8n + Baserow." },
     "cabana": { "title": "Cabaña Serendipia — Digital guide for guests", "desc": "A premium guide that opens with an NFC tap: instant wifi, house guide, live weather and map recommendations. No app to download." },
     "tarjeta": { "title": "3D NFC business card", "desc": "An NFC card that opens a landing with in-browser 3D, cinematic scroll and light load — the pitch is the product itself." },
-    "k12": { "title": "K12 Social Club", "desc": "Identity and campaign: design, motion and video." }
+    "edicion": { "title": "Editing", "desc": "Identity and campaign: design, motion and video." }
   },
   "Contact": {
     "eyebrow": "CONTACT",

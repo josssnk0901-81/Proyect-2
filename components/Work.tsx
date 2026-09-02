@@ -30,12 +30,12 @@ const CONFIG = [
   {key: "cabana", tag: "Hospitalidad · NFC", cover: "/work/cabana.png", shots: [{src: "/work/cabana.png", cap: "sitio"}]},
   {key: "tarjeta", tag: "Web · 3D", cover: null, shots: []},
   {
-    key: "k12",
+    key: "edicion",
     tag: "Edición · Motion",
-    cover: "/work/k12-horario.png",
+    cover: "/work/flyer-1.png",
     shots: [
-      {src: "/work/k12-horario.png", cap: "flyer"},
-      {src: "/work/k12-abierto.jpg", cap: "flyer"},
+      {src: "/work/flyer-1.png", cap: "flyer"},
+      {src: "/work/flyer-2.jpg", cap: "flyer"},
     ],
   },
 ] as const;
