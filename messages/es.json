@@ -37,7 +37,6 @@
       "flyer": "Flyer"
     },
     "mogu": { "title": "MOGU", "desc": "SaaS multi-tenant con NFC y módulos por giro — dashboard, CRM y NFC en producción." },
-    "julio": { "title": "Julio Jiménez Photography", "desc": "Sitio de cliente: dirección editorial y desarrollo en Astro." },
     "constructora": { "title": "Sistema para constructora", "desc": "Cotización → seguimiento → cierre → facturación, con panel en vivo. n8n + Baserow." },
     "cabana": { "title": "Cabaña Serendipia — Guía digital para huéspedes", "desc": "Guía premium que se abre con un toque NFC: wifi al instante, guía de la casa, clima en vivo y recomendaciones en mapa. Sin descargar nada." },
     "tarjeta": { "title": "Tarjeta de presentación NFC 3D", "desc": "Una tarjeta NFC que abre una landing con 3D en el navegador, scroll cinematográfico y carga ligera — la presentación es el propio producto." },
