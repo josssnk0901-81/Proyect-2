@@ -1,7 +1,24 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
+
+// Cabeceras de seguridad (barreras). CSP con nonce se añade aparte, vía proxy, para no romper Next/Turbopack sin pruebas.
+const securityHeaders = [
+  {key: "X-Content-Type-Options", value: "nosniff"},
+  {key: "X-Frame-Options", value: "DENY"},
+  {key: "Referrer-Policy", value: "strict-origin-when-cross-origin"},
+  {key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()"},
+  {key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload"},
+];
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  poweredByHeader: false,               // no revelar "X-Powered-By: Next.js"
+  productionBrowserSourceMaps: false,   // no publicar el código fuente legible en prod
+  reactStrictMode: true,
+  async headers() {
+    return [{source: "/:path*", headers: securityHeaders}];
+  },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

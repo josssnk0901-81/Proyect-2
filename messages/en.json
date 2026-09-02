@@ -1,0 +1,35 @@
+{
+  "Meta": {
+    "title": "JossSnK 無月",
+    "description": "Web development, automation and art direction. Systems that look as good as they run."
+  },
+  "Hero": {
+    "eyebrow": "DEVELOPMENT · AUTOMATION · MOTION",
+    "headline": "Systems that look as good as they run.",
+    "sub": "Web development, automation and art direction — for brands that refuse to look like everyone else.",
+    "scroll": "SCROLL"
+  },
+  "Disciplines": {
+    "eyebrow": "WHAT I DO",
+    "title": "Disciplines",
+    "programming": { "title": "Programming", "desc": "Custom web, SaaS and dashboards. Interfaces people get without a manual." },
+    "automation": { "title": "Automation", "desc": "Workflows that run themselves: capture, follow-up and alerts, hands-off." },
+    "security": { "title": "Security", "desc": "Fundamentals and a personal lab. Hardening and good practice, exposing no one." },
+    "editing": { "title": "Editing", "desc": "Motion, photo and video with identity. From idea to render, art-directed." }
+  },
+  "Work": {
+    "eyebrow": "SELECTED WORK",
+    "title": "Cases",
+    "mogu": { "title": "MOGU", "desc": "Multi-tenant SaaS with NFC and per-vertical modules — dashboard, CRM and NFC in production." },
+    "julio": { "title": "Julio Jiménez Photography", "desc": "Client site: editorial art direction and Astro development." },
+    "constructora": { "title": "Construction sales system", "desc": "Quote → follow-up → close → invoicing, with a live panel. n8n + Baserow." },
+    "k12": { "title": "K12 Social Club", "desc": "Identity and campaign: design, motion and video." }
+  },
+  "Contact": {
+    "eyebrow": "CONTACT",
+    "title": "Let's work.",
+    "lead": "Got a project in mind? Let's talk.",
+    "cv": "Download CV",
+    "whatsapp": "WhatsApp"
+  }
+}

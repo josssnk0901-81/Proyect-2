@@ -1,0 +1,35 @@
+{
+  "Meta": {
+    "title": "JossSnK 無月",
+    "description": "Web開発・自動化・アートディレクション。美しく、そして動くシステムを。"
+  },
+  "Hero": {
+    "eyebrow": "開発 · 自動化 · モーション",
+    "headline": "美しく、そして動くシステムを。",
+    "sub": "Web開発・自動化・アートディレクション。ありきたりに見せないブランドのために。",
+    "scroll": "スクロール"
+  },
+  "Disciplines": {
+    "eyebrow": "できること",
+    "title": "領域",
+    "programming": { "title": "プログラミング", "desc": "オーダーメイドのWeb・SaaS・ダッシュボード。説明書のいらないUIを。" },
+    "automation": { "title": "自動化", "desc": "自動で動くワークフロー。取得・追客・通知まで、手を離して。" },
+    "security": { "title": "セキュリティ", "desc": "基礎と自前のラボ。誰も晒さずに、ハードニングとベストプラクティスを。" },
+    "editing": { "title": "編集", "desc": "個性ある映像・写真・モーション。アイデアからレンダーまで、アートディレクション付きで。" }
+  },
+  "Work": {
+    "eyebrow": "選りすぐりの仕事",
+    "title": "実績",
+    "mogu": { "title": "MOGU", "desc": "NFCと業種別モジュールのマルチテナントSaaS。ダッシュボード・CRM・NFCを本番運用。" },
+    "julio": { "title": "Julio Jiménez Photography", "desc": "クライアントサイト。エディトリアルなアートディレクションとAstro開発。" },
+    "constructora": { "title": "建設会社向けシステム", "desc": "見積 → 追客 → 成約 → 請求、ライブパネル付き。n8n + Baserow。" },
+    "k12": { "title": "K12 Social Club", "desc": "アイデンティティとキャンペーン。デザイン・モーション・映像。" }
+  },
+  "Contact": {
+    "eyebrow": "お問い合わせ",
+    "title": "一緒に作りましょう。",
+    "lead": "プロジェクトのご相談を。",
+    "cv": "CVをダウンロード",
+    "whatsapp": "WhatsApp"
+  }
+}

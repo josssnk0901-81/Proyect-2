@@ -1,0 +1,35 @@
+{
+  "Meta": {
+    "title": "JossSnK 無月",
+    "description": "Desarrollo web, automatización y dirección de arte. Sistemas que se ven tan bien como funcionan."
+  },
+  "Hero": {
+    "eyebrow": "DESARROLLO · AUTOMATIZACIÓN · MOTION",
+    "headline": "Sistemas que se ven tan bien como funcionan.",
+    "sub": "Desarrollo web, automatización y dirección de arte — para marcas que no quieren verse como todas.",
+    "scroll": "DESLIZA"
+  },
+  "Disciplines": {
+    "eyebrow": "LO QUE HAGO",
+    "title": "Disciplinas",
+    "programming": { "title": "Programación", "desc": "Web, SaaS y dashboards a medida. Interfaces que la gente entiende sin manual." },
+    "automation": { "title": "Automatización", "desc": "Flujos que trabajan solos: captura, seguimiento y avisos, sin mover un dedo." },
+    "security": { "title": "Ciberseguridad", "desc": "Fundamentos y laboratorio propio. Hardening y buenas prácticas, sin exponer a nadie." },
+    "editing": { "title": "Edición", "desc": "Motion, foto y video con identidad. De la idea al render, con dirección de arte." }
+  },
+  "Work": {
+    "eyebrow": "TRABAJO SELECCIONADO",
+    "title": "Casos",
+    "mogu": { "title": "MOGU", "desc": "SaaS multi-tenant con NFC y módulos por giro — dashboard, CRM y NFC en producción." },
+    "julio": { "title": "Julio Jiménez Photography", "desc": "Sitio de cliente: dirección editorial y desarrollo en Astro." },
+    "constructora": { "title": "Sistema para constructora", "desc": "Cotización → seguimiento → cierre → facturación, con panel en vivo. n8n + Baserow." },
+    "k12": { "title": "K12 Social Club", "desc": "Identidad y campaña: diseño, motion y video." }
+  },
+  "Contact": {
+    "eyebrow": "CONTACTO",
+    "title": "Trabajemos.",
+    "lead": "¿Tienes un proyecto en mente? Hablemos.",
+    "cv": "Descargar CV",
+    "whatsapp": "WhatsApp"
+  }
+}
