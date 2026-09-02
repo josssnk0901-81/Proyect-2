@@ -2,9 +2,9 @@ import {getTranslations} from "next-intl/server";
 import Reveal from "@/components/Reveal";
 
 const ITEMS = [
-  {key: "programming", n: "01", stack: "MOGU · BusinessHub · Next.js"},
-  {key: "automation", n: "02", stack: "n8n · Baserow · Webhooks"},
-  {key: "security", n: "03", stack: "Kali · Hardening · Lab"},
+  {key: "programming", n: "01", stack: "Desarrollo web · JavaScript · PostgreSQL · APIs · Backend"},
+  {key: "automation", n: "02", stack: "Workflows · Integraciones · IA · RPA"},
+  {key: "security", n: "03", stack: "Pentesting · Linux · Seguridad web · Cloud Security"},
   {key: "editing", n: "04", stack: "Photoshop · After Effects · Motion"},
 ] as const;
 

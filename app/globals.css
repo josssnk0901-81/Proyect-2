@@ -207,6 +207,15 @@ html.fine-pointer * {
 .headline-dot {
   color: var(--color-ember);
 }
+/* Separador del eyebrow: mismo punto de aura (brasa) que la luna */
+.eyebrow-dot {
+  flex: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #ffd9b0 0%, var(--color-ember) 55%, rgba(193, 64, 31, 0) 78%);
+  box-shadow: 0 0 6px 1px rgba(193, 64, 31, 0.6);
+}
 .cue-bar {
   position: relative;
   display: inline-block;

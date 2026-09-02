@@ -1,5 +1,6 @@
 import {getLocale, getTranslations} from "next-intl/server";
 import Reveal from "@/components/Reveal";
+import {WhatsAppIcon, InstagramIcon, TikTokIcon, DownloadIcon} from "@/components/icons";
 
 export default async function Contact() {
   const t = await getTranslations("Contact");
@@ -24,31 +25,37 @@ export default async function Contact() {
             {/* WhatsApp: el número vive en el servidor (env), fuera del bundle */}
             <a
               href="/api/wa"
-              className="inline-flex items-center rounded-lg bg-ember px-6 py-3 font-mono text-sm font-medium text-bg transition hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-lg bg-ember px-6 py-3 font-mono text-sm font-medium text-bg transition hover:opacity-90"
             >
+              <WhatsAppIcon className="size-4" />
               {t("whatsapp")}
             </a>
             <a
               href="/cv-jossnk.pdf"
               download
-              className="inline-flex items-center rounded-lg border border-line px-6 py-3 font-mono text-sm text-ink transition hover:border-steel"
+              className="inline-flex items-center gap-2 rounded-lg border border-line px-6 py-3 font-mono text-sm text-ink transition hover:border-steel"
             >
+              <DownloadIcon className="size-4 text-ember" />
               {t("cv")}
             </a>
             <a
               href="https://instagram.com/jossnk_81"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 font-mono text-sm text-ink2 underline-offset-4 transition hover:text-ink hover:underline"
+              aria-label="Instagram"
+              className="inline-flex items-center gap-1.5 px-2 font-mono text-sm text-ink2 underline-offset-4 transition hover:text-ink hover:underline"
             >
+              <InstagramIcon className="size-4" />
               Instagram
             </a>
             <a
               href="https://tiktok.com/@josssnk81"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 font-mono text-sm text-ink2 underline-offset-4 transition hover:text-ink hover:underline"
+              aria-label="TikTok"
+              className="inline-flex items-center gap-1.5 px-2 font-mono text-sm text-ink2 underline-offset-4 transition hover:text-ink hover:underline"
             >
+              <TikTokIcon className="size-4" />
               TikTok
             </a>
           </div>

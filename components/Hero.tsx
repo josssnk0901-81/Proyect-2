@@ -8,12 +8,23 @@ export default async function Hero() {
   const hasDot = headline.endsWith(".");
   const headMain = hasDot ? headline.slice(0, -1) : headline;
 
+  // El eyebrow se separa con puntos de aura (misma brasa que la luna).
+  const eyebrowItems = t("eyebrow")
+    .split("·")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
   return (
-    <section className="relative flex min-h-svh items-center">
+    <section className="relative flex min-h-svh items-center py-28 md:py-24">
       <div className="mx-auto grid w-full max-w-[1180px] grid-cols-1 items-center gap-10 px-6 md:grid-cols-[1.15fr_0.85fr] md:px-12">
         <div>
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.16em] text-steel">
-            {t("eyebrow")}
+          <p className="mb-6 flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-steel">
+            {eyebrowItems.map((item, i) => (
+              <span key={item} className="flex items-center gap-3">
+                {i > 0 && <span className="eyebrow-dot" aria-hidden />}
+                {item}
+              </span>
+            ))}
           </p>
           <h1 className="max-w-[14ch] font-display text-5xl font-bold leading-[1.02] tracking-tight md:text-[80px]">
             {headMain}

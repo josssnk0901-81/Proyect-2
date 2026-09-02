@@ -238,6 +238,22 @@ export default function WorkGrid({cases, labels}: {cases: WorkCase[]; labels: Wo
                         sizes="(max-width: 1100px) 92vw, 1100px"
                         className="object-contain"
                       />
+                      {/* Watermark en mosaico diagonal. mix-blend-difference lo hace visible
+                          sobre fondos claros y oscuros; pointer-events-none no estorba el swipe. */}
+                      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+                        <div className="absolute inset-[-25%] flex rotate-[-24deg] flex-col justify-around gap-10 opacity-[0.15] mix-blend-difference">
+                          {Array.from({length: 7}).map((_, r) => (
+                            <div
+                              key={r}
+                              className="flex justify-around gap-14 whitespace-nowrap font-mono text-sm tracking-[0.25em] text-white"
+                            >
+                              {Array.from({length: 6}).map((_, col) => (
+                                <span key={col}>JossSnK 無月</span>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
