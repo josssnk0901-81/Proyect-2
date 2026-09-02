@@ -80,7 +80,9 @@ html.fine-pointer * {
 #cursor {
   position: fixed;
   inset: 0;
-  z-index: 60;
+  /* Por encima de TODO (incluido el carrusel z-100) para que la flama nunca
+     desaparezca detrás de un modal. Es pointer-events:none, no bloquea clics. */
+  z-index: 130;
   pointer-events: none;
 }
 .aura,
