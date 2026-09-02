@@ -93,6 +93,22 @@ test.describe("Landing JossSnK 無月", () => {
     expect(html).not.toMatch(/\b\d{12,13}\b/); // ningún teléfono crudo en el bundle
   });
 
+  test("el carrusel abre la galería de un caso, navega y cierra", async ({page}) => {
+    await page.goto("/es");
+
+    // MOGU tiene 3 capturas (Dashboard, Clientes, NFC). El caption refleja la lámina.
+    await page.getByRole("button", {name: "Ver capturas — MOGU"}).click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(dialog).toContainText("Dashboard");
+
+    await dialog.getByRole("button", {name: "Siguiente"}).click();
+    await expect(dialog).toContainText("Clientes");
+
+    await page.keyboard.press("Escape");
+    await expect(dialog).toBeHidden();
+  });
+
   test("/api/wa redirige a wa.me sin exponer el número en el cliente", async ({page}) => {
     const res = await page.request.get("/api/wa", {maxRedirects: 0});
     expect([302, 307, 308]).toContain(res.status());

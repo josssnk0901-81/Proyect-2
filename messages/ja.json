@@ -20,9 +20,27 @@
   "Work": {
     "eyebrow": "選りすぐりの仕事",
     "title": "実績",
+    "liveDemo": "デモを見る",
+    "viewShots": "スクリーンショットを見る",
+    "close": "閉じる",
+    "prev": "前へ",
+    "next": "次へ",
+    "shots": {
+      "dashboard": "ダッシュボード",
+      "clientes": "顧客",
+      "nfc": "NFC",
+      "seguimiento": "ワークフロー · 日次フォロー",
+      "cotizacion": "ワークフロー · 見積受付",
+      "formulario": "見積フォーム",
+      "panel": "ライブパネル",
+      "sitio": "公開サイト",
+      "flyer": "フライヤー"
+    },
     "mogu": { "title": "MOGU", "desc": "NFCと業種別モジュールのマルチテナントSaaS。ダッシュボード・CRM・NFCを本番運用。" },
     "julio": { "title": "Julio Jiménez Photography", "desc": "クライアントサイト。エディトリアルなアートディレクションとAstro開発。" },
     "constructora": { "title": "建設会社向けシステム", "desc": "見積 → 追客 → 成約 → 請求、ライブパネル付き。n8n + Baserow。" },
+    "cabana": { "title": "Cabaña Serendipia — 宿泊者向けデジタルガイド", "desc": "NFCにかざすだけで開くプレミアムガイド。Wi-Fi・館内案内・リアルタイム天気・地図付きおすすめ。アプリ不要。" },
+    "tarjeta": { "title": "NFC 3Dビジネスカード", "desc": "NFCカードをかざすと、ブラウザ内3D・シネマティックスクロール・軽量読み込みのランディングが開く——プレゼン自体が製品。" },
     "k12": { "title": "K12 Social Club", "desc": "アイデンティティとキャンペーン。デザイン・モーション・映像。" }
   },
   "Contact": {

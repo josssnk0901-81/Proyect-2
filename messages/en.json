@@ -20,9 +20,27 @@
   "Work": {
     "eyebrow": "SELECTED WORK",
     "title": "Cases",
+    "liveDemo": "View demo",
+    "viewShots": "View shots",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "shots": {
+      "dashboard": "Dashboard",
+      "clientes": "Clients",
+      "nfc": "NFC",
+      "seguimiento": "Workflow · Daily follow-up",
+      "cotizacion": "Workflow · Quote intake",
+      "formulario": "Quote form",
+      "panel": "Live panel",
+      "sitio": "Live site",
+      "flyer": "Flyer"
+    },
     "mogu": { "title": "MOGU", "desc": "Multi-tenant SaaS with NFC and per-vertical modules — dashboard, CRM and NFC in production." },
     "julio": { "title": "Julio Jiménez Photography", "desc": "Client site: editorial art direction and Astro development." },
     "constructora": { "title": "Construction sales system", "desc": "Quote → follow-up → close → invoicing, with a live panel. n8n + Baserow." },
+    "cabana": { "title": "Cabaña Serendipia — Digital guide for guests", "desc": "A premium guide that opens with an NFC tap: instant wifi, house guide, live weather and map recommendations. No app to download." },
+    "tarjeta": { "title": "3D NFC business card", "desc": "An NFC card that opens a landing with in-browser 3D, cinematic scroll and light load — the pitch is the product itself." },
     "k12": { "title": "K12 Social Club", "desc": "Identity and campaign: design, motion and video." }
   },
   "Contact": {
